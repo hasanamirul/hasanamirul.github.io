@@ -1,0 +1,19 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 200px;
+}
+
+/* jumbotron */
+.jumbotron {
+  background-color: #808080;
+  padding-top: 5rem;
+}
+
+/* project */
+#project {
+  background-color: #808080;
+}
+
+#footer {
+  padding-top: 10px;
+}
