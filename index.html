@@ -1,199 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amirul Hasan - Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <style>
-      :root {
-        --primary-color: #0d6efd;
-        --dark-color: #1a1a2e;
-        --light-color: #f8f9fa;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amirul Hasan - Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --dark-color: #1a1a2e;
+      --light-color: #f8f9fa;
+    }
 
-      body {
-        font-family: 'Segoe UI', sans-serif;
-        scroll-behavior: smooth;
-        background-color: #fff;
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      .navbar {
-        background-color: var(--dark-color);
-      }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
 
-      .navbar-brand,
-      .nav-link,
-      .dropdown-menu a {
-        color: white !important;
-      }
+    .navbar {
+      background-color: var(--dark-color);
+    }
 
-      .jumbotron {
-        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-        color: white;
-        padding: 6rem 2rem;
-        text-align: center;
-      }
+    .navbar-brand,
+    .nav-link {
+      color: white !important;
+      position: relative;
+      transition: color 0.3s ease;
+    }
 
-      .jumbotron img {
-        border: 5px solid #fff;
-      }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0%;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
 
-      section {
-        padding: 4rem 0;
-      }
+    .nav-link:hover::after {
+      width: 100%;
+    }
 
-      .card-custom {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background-color: #fff;
-        border-radius: 15px;
-      }
+    .jumbotron {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
 
-      .card-custom:hover {
-        transform: scale(1.03);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      }
+    .jumbotron img {
+      border: 5px solid #fff;
+    }
 
-      footer {
-        background-color: var(--dark-color);
-        color: white;
-        padding: 2rem 0 1rem;
-      }
+    section {
+      padding: 4rem 0;
+    }
 
-      .form-control,
-      .btn {
-        border-radius: 10px;
-      }
-    </style>
-  </head>
+    .card-custom {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #fff;
+      border-radius: 15px;
+    }
 
-  <body id="Home">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Amirul Hasan</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#project">Social Media</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    .card-custom:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
 
-    <!-- Jumbotron -->
-    <div class="jumbotron">
-      <img src="nah 2.jpg" alt="Profile" class="rounded-circle mb-3" width="150" />
-      <h1 class="display-5 fw-bold">Amirul Hasan</h1>
-      <p class="lead">Student | Guitarist</p>
-      <div>
-        <i class="fa-solid fa-school mx-2"></i>
-        <i class="fa-solid fa-guitar mx-2"></i>
-        <i class="fa-brands fa-github mx-2"></i>
-        <i class="fa-solid fa-face-smile mx-2"></i>
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 2rem 0 1rem;
+    }
+
+    .form-control,
+    .btn {
+      border-radius: 10px;
+    }
+
+    .contact-heading {
+      color: black;
+    }
+
+    /* My Location Section Styling */
+    #location {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+
+    #location iframe {
+      border-radius: 15px;
+      border: 4px solid white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+
+    /* WhatsApp Card Styling */
+    .whatsapp-card {
+      background-color: #d4f8d4;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 128, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      color: #155724;
+    }
+
+    .whatsapp-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 128, 0, 0.5);
+      cursor: pointer;
+    }
+
+    .whatsapp-card i.fa-whatsapp {
+      color: #25d366;
+      transition: color 0.3s ease;
+    }
+
+    .whatsapp-card:hover i.fa-whatsapp {
+      color: #128c7e;
+    }
+
+    .whatsapp-card a.btn-success {
+      background-color: #25d366;
+      border-color: #25d366;
+      font-weight: 600;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .whatsapp-card a.btn-success:hover {
+      background-color: #128c7e;
+      border-color: #128c7e;
+      color: #fff;
+    }
+
+    .whatsapp-card p {
+      margin: 0 1.5rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">Amirul Hasan</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#social">Social Media</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#location">My Location</a></li>
+        </ul>
       </div>
     </div>
+  </nav>
 
-    <!-- About -->
-    <section id="about" class="bg-light">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fw-bold">About Me</h2>
+  <!-- Jumbotron -->
+  <section id="home" class="jumbotron">
+    <img src="nah 2.jpg" alt="Profile" class="rounded-circle mb-3" width="150" />
+    <h1 class="display-5 fw-bold">Amirul Hasan</h1>
+    <p class="lead">Student | Guitarist</p>
+    <div>
+      <i class="fa-solid fa-school mx-2"></i>
+      <i class="fa-solid fa-guitar mx-2"></i>
+      <i class="fa-brands fa-github mx-2"></i>
+      <i class="fa-solid fa-face-smile mx-2"></i>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">About Me</h2>
+      </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-md-4 mb-3">
+          <i class="fa-solid fa-user-graduate fa-2x mb-2 text-primary"></i>
+          <p>Halo, saya <strong>Amirul Hasan</strong>, mahasiswa Teknik Informatika <strong>Universitas Wahid Hasyim</strong>, semester 3, usia 19 tahun.</p>
         </div>
-        <div class="row justify-content-center text-center">
-          <div class="col-md-4 mb-3">
-            <i class="fa-solid fa-user-graduate fa-2x mb-2 text-primary"></i>
-            <p>Halo, saya <strong>Amirul Hasan</strong>, mahasiswa Fakultas Teknik Informatika di <strong>Universitas Wahid Hasyim</strong>, usia 19 tahun, saat ini di semester 3.</p>
-          </div>
-          <div class="col-md-4 mb-3">
-            <i class="fa-solid fa-guitar fa-2x mb-2 text-primary"></i>
-            <p>Saya hobi bermain gitar dan game eFootball. Sambil kuliah, saya juga bekerja paruh waktu untuk mengembangkan keterampilan dan pengalaman.</p>
-          </div>
-          <div class="col-md-4 mb-3">
-            <i class="fa-solid fa-school fa-2x mb-2 text-primary"></i>
-            <p>Riwayat pendidikan saya dari <strong>SDN Purwosari 01</strong>, <strong>SMPN 35 Semarang</strong>, <strong>SMK Muhammadiyah 2 Boja</strong>, hingga kini di <strong>Unwahas Semarang</strong>.</p>
-          </div>
+        <div class="col-md-4 mb-3">
+          <i class="fa-solid fa-guitar fa-2x mb-2 text-primary"></i>
+          <p>Hobi saya bermain gitar dan game eFootball. Saya juga bekerja paruh waktu untuk menambah pengalaman dan keterampilan.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <i class="fa-solid fa-school fa-2x mb-2 text-primary"></i>
+          <p>Riwayat pendidikan saya: <strong>SDN Purwosari 01</strong>, <strong>SMPN 35 Semarang</strong>, <strong>SMK Muhammadiyah 2 Boja</strong>, hingga <strong>Unwahas</strong>.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Social Media -->
-    <section id="project">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fw-bold text-dark">My Social Media</h2>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-4 mb-4">
-            <div class="card card-custom shadow-sm h-100 text-center border-0">
-              <div class="card-body d-flex flex-column align-items-center">
-                <i class="fa-brands fa-square-instagram fa-3x mb-3 text-danger"></i>
-                <h5 class="card-title mb-2">Instagram</h5>
-                <a href="https://instagram.com/hasanamirul77" class="btn btn-outline-dark rounded-pill px-4">@hasanamirul77</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card card-custom shadow-sm h-100 text-center border-0">
-              <div class="card-body d-flex flex-column align-items-center">
-                <i class="fa-brands fa-tiktok fa-3x mb-3 text-dark"></i>
-                <h5 class="card-title mb-2">Tiktok</h5>
-                <a href="#" class="btn btn-outline-dark rounded-pill px-4">@hasanamirul11</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card card-custom shadow-sm h-100 text-center border-0">
-              <div class="card-body d-flex flex-column align-items-center">
-                <i class="fa-brands fa-youtube fa-3x mb-3 text-danger"></i>
-                <h5 class="card-title mb-2">YouTube</h5>
-                <a href="#" class="btn btn-outline-dark rounded-pill px-4">@hasanamirul77</a>
-              </div>
+  <!-- Social Media -->
+  <section id="social">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-dark">My Social Media</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-4">
+          <div class="card card-custom shadow-sm h-100 text-center border-0">
+            <div class="card-body d-flex flex-column align-items-center">
+              <i class="fa-brands fa-square-instagram fa-3x mb-3 text-danger"></i>
+              <h5 class="card-title mb-2">Instagram</h5>
+              <a href="https://instagram.com/hasanamirul77" class="btn btn-outline-dark rounded-pill px-4">@hasanamirul77</a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="bg-light">
-      <div class="container">
-        <div class="text-center mb-4">
-          <h2>Contact Me</h2>
+        <div class="col-md-4 mb-4">
+          <div class="card card-custom shadow-sm h-100 text-center border-0">
+            <div class="card-body d-flex flex-column align-items-center">
+              <i class="fa-brands fa-tiktok fa-3x mb-3 text-dark"></i>
+              <h5 class="card-title mb-2">Tiktok</h5>
+              <a href="#" class="btn btn-outline-dark rounded-pill px-4">@hasanamirul11</a>
+            </div>
+          </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <form>
-              <div class="mb-3">
-                <label for="name" class="form-label">Your Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email">
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="3" placeholder="Write your message"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Send Message</button>
-            </form>
+        <div class="col-md-4 mb-4">
+          <div class="card card-custom shadow-sm h-100 text-center border-0">
+            <div class="card-body d-flex flex-column align-items-center">
+              <i class="fa-brands fa-youtube fa-3x mb-3 text-danger"></i>
+              <h5 class="card-title mb-2">YouTube</h5>
+              <a href="#" class="btn btn-outline-dark rounded-pill px-4">@hasanamirul77</a>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="text-center">
-      <p>Created with <i class="fa-regular fa-heart"></i> by <a href="https://www.instagram.com/hasanamirul77/" class="text-decoration-none text-light">Amirul Hasan</a></p>
-    </footer>
+  <!-- Contact Me -->
+  <section id="contact" class="bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold contact-heading">Contact Me</h2>
+        <p class="text-secondary">Feel free to reach out for collaboration or just to say hello!</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form class="bg-white text-dark p-4 rounded-4 shadow-lg">
+            <div class="form-floating mb-4">
+              <input type="text" class="form-control" id="name" placeholder="Your Name" />
+              <label for="name"><i class="fa-solid fa-user me-2 text-primary"></i>Your Name</label>
+            </div>
+            <div class="form-floating mb-4">
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" />
+              <label for="email"><i class="fa-solid fa-envelope me-2 text-primary"></i>Email Address</label>
+            </div>
+            <div class="form-floating mb-4">
+              <textarea
+                class="form-control"
+                placeholder="Leave a message here"
+                id="message"
+                style="height: 120px;"
+              ></textarea>
+              <label for="message"><i class="fa-solid fa-comment-dots me-2 text-primary"></i>Your Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+              <i class="fa-solid fa-paper-plane me-2"></i>Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <!-- My Location -->
+  <section id="location">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">My Location</h2>
+      </div>
+      <div class="row align-items-center">
+        <!-- Peta -->
+        <div class="col-md-6 mb-4">
+          <iframe
+            src="https://maps.google.com/maps?q=Setiakawan%20Teknik%20Purwosari%20Mijen%20Semarang&output=embed"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <!-- WhatsApp Card -->
+        <div class="col-md-6 mb-4">
+          <div class="card whatsapp-card text-center p-4">
+            <a href="https://wa.me/6288802724556" target="_blank" class="d-inline-block mb-3">
+              <i class="fa-brands fa-whatsapp fa-3x"></i>
+            </a>
+            <h5 class="fw-bold mb-2">Hubungi Saya via WhatsApp</h5>
+            <p>
+              Klik ikon WhatsApp di atas untuk langsung terhubung dengan saya.<br />
+              Saya siap membalas pesan Anda secepat mungkin! 😊
+            </p>
+            <a href="https://wa.me/6288802724556" target="_blank" class="btn btn-success rounded-pill px-4 mt-2 fw-semibold">
+              <i class="fa-brands fa-whatsapp me-2"></i>Kirim Pesan
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <p>
+      Created with <i class="fa-regular fa-heart"></i> by
+      <a href="https://www.instagram.com/hasanamirul77/" class="text-decoration-none text-light">Amirul Hasan</a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
